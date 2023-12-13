@@ -8,17 +8,21 @@ const Searchbar = (props) => {
     type: "",
   });
 
-
-  console.log(jobCriteria)
   const handleChange = (e) => {
     setJobCriteria((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }));
   };
-  
+
   const search = async () => {
-     await props.fetchJobsCustom(jobCriteria);
+    await props.fetchJobsCustom(jobCriteria);
+    setJobCriteria({
+      title: "",
+      location: "",
+      experience: "",
+      type: "",
+    });
   };
   return (
     <div className="flex gap-4 my-10 justify-center px-10">
