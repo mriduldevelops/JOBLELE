@@ -51,14 +51,14 @@ const JobForm = ({ showPostForm, fetchJobs }) => {
   };
 
   return (
-    <div className="m-10">
-      <div className="flex flex-col justify-between items-center mx-10 mb-4 p-10 bg-zinc-900 rounded-md shadow-lg border border-zinc-900">
+    <div className="m-10 mx-6 md:mx-20">
+      <div className="flex flex-col justify-between items-center mb-4 p-8 md:p-12 bg-zinc-900 rounded-md shadow-lg border border-zinc-900 gap-4">
         <input
           onChange={handleChange}
           name="company"
           value={jobData.company}
           type="text"
-          className="mb-10 w-full py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
+          className="w-full py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
           placeholder="Enter Company Name"
         />
         <input
@@ -66,7 +66,7 @@ const JobForm = ({ showPostForm, fetchJobs }) => {
           name="skills"
           value={skills}
           type="text"
-          className="mb-10 w-full py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
+          className="w-full py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
           placeholder="Required Skills"
         />
         <input
@@ -74,15 +74,15 @@ const JobForm = ({ showPostForm, fetchJobs }) => {
           name="jobLink"
           value={jobData.jobLink}
           type="text"
-          className="mb-10 w-full py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
+          className="w-full py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
           placeholder="Paste Job Link"
         />
-        <div className="flex gap-7 justify-center px-10">
+        <div className="w-full flex flex-wrap gap-4 justify-center md:flex-nowrap">
           <select
             onChange={handleChange}
             name="title"
             value={jobData.title}
-            className="w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
+            className="w-full md:w-full py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
           >
             <option value="" disabled hidden>
               Job Role
@@ -97,7 +97,7 @@ const JobForm = ({ showPostForm, fetchJobs }) => {
             onChange={handleChange}
             name="type"
             value={jobData.type}
-            className="w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
+            className="w-full md:w-full py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
           >
             <option value="" disabled hidden>
               Job Type
@@ -110,7 +110,7 @@ const JobForm = ({ showPostForm, fetchJobs }) => {
             onChange={handleChange}
             name="location"
             value={jobData.location}
-            className="w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
+            className="w-full md:w-full py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
           >
             <option value="" disabled hidden>
               Location
@@ -123,7 +123,7 @@ const JobForm = ({ showPostForm, fetchJobs }) => {
             onChange={handleChange}
             name="experience"
             value={jobData.experience}
-            className="w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
+            className="w-full md:w-full py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
           >
             <option value="" disabled hidden>
               Experience
@@ -137,7 +137,7 @@ const JobForm = ({ showPostForm, fetchJobs }) => {
 
         <button
           onClick={onAdd}
-          className="mt-10 bg-blue-500 px-32 py-2 rounded-md font-semibold text-white"
+          className="w-full bg-blue-500  py-3 rounded-md font-semibold text-white hover:bg-blue-600"
         >
           Add Job
         </button>

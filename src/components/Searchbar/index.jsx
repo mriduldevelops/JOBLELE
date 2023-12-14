@@ -25,12 +25,12 @@ const Searchbar = (props) => {
     });
   };
   return (
-    <div className="flex gap-4 my-10 justify-center px-10">
+    <div className="flex flex-wrap gap-4 my-10  justify-center px-10 w-full md:flex-nowrap">
       <select
         onChange={handleChange}
         name="title"
         value={jobCriteria.title}
-        className="w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
+        className="w-64 md:w-full py-3 pl-4 bg-zinc-200 font-semibold rounded-md "
       >
         <option value="" disabled hidden>
           Job Role
@@ -45,7 +45,7 @@ const Searchbar = (props) => {
         onChange={handleChange}
         name="type"
         value={jobCriteria.type}
-        className="w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
+        className="w-64 md:w-full py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
       >
         <option value="" disabled hidden>
           Job Type
@@ -58,7 +58,7 @@ const Searchbar = (props) => {
         onChange={handleChange}
         name="location"
         value={jobCriteria.location}
-        className="w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
+        className="w-64 md:w-full py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
       >
         <option value="" disabled hidden>
           Location
@@ -71,7 +71,7 @@ const Searchbar = (props) => {
         onChange={handleChange}
         name="experience"
         value={jobCriteria.experience}
-        className="w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
+        className="w-64 md:w-full py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
       >
         <option value="" disabled hidden>
           Experience
@@ -83,7 +83,7 @@ const Searchbar = (props) => {
       </select>
       <button
         onClick={search}
-        className="w-64 bg-blue-500 text-white font-bold py-3 rounded-md"
+        className="w-64 md:w-full bg-blue-500 text-white font-bold py-3 rounded-md hover:bg-blue-600"
       >
         Search
       </button>

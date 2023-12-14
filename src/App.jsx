@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Searchbar from "./components/Searchbar";
 import JobCard from "./components/JobCard";
 import JobForm from "./components/JobForm";
+import Footer from "./components/Footer";
 // import jobData from "./components/jobDummyData";
 import { useEffect, useState } from "react";
 import { collection, query, orderBy, where, getDocs } from "firebase/firestore";
@@ -65,19 +66,24 @@ export default function App() {
   return (
     <div className="w-full h-full bg-zinc-800 pb-2 overflow-y-auto">
       <Navbar showPostForm={showPostForm} />
-      {isActive && <JobForm showPostForm={showPostForm} fetchJobs={fetchJobs}/>}
+      {isActive && (
+        <JobForm showPostForm={showPostForm} fetchJobs={fetchJobs} />
+      )}
       <Header />
-      <Searchbar fetchJobsCustom={fetchJobsCustom} />
-      {customSearch && (
-        <button onClick={fetchJobs} className="flex pl-[1150px] mb-2">
+      {!customSearch ? (
+        <Searchbar fetchJobsCustom={fetchJobsCustom} />
+      ) : (
+        <button onClick={fetchJobs} className="my-10 flex mx-auto">
           <p className="bg-blue-500 px-10 py-2 rounded-md text-white">
             Clear Filters
           </p>
         </button>
       )}
+
       {jobs.map((job) => (
         <JobCard key={job.id} {...job} />
       ))}
+      <Footer />
     </div>
   );
 }
